@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule Selector</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            text-align: center;
+            padding: 10px;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        td input {
+            width: 100%;
+            border: none;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Schedule Selector</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Time</th>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thursday</th>
+                <th>Friday</th>
+                <th>Saturday</th>
+                <th>Sunday</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Time slots -->
+            <script>
+                const times = [];
+                for (let h = 9; h <= 22; h++) {
+                    times.push(`${h}:00`, `${h}:30`);
+                }
+                times.forEach((time) => {
+                    document.write(`<tr><td>${time}</td>`);
+                    for (let d = 0; d < 7; d++) {
+                        document.write(`<td><input type="text" placeholder="Name"></td>`);
+                    }
+                    document.write(`</tr>`);
+                });
+            </script>
+        </tbody>
+    </table>
+</body>
+</html>
